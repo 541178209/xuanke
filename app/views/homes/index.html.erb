@@ -1,0 +1,51 @@
+<!--sgg26-->
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-12 list-group-item active" style="background-color: #e2e2e2;padding-bottom: 10px;padding-top: 10px">
+      <div style="font-size: 40px; padding-left: 40px">
+        <%#= image_tag "logo.jpg", :height => '90', :width => '90' %>
+        <img src="/images/logo.jpg" alt="logo" width="90px" height="90px">
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp国科大选课管理系统
+      </div>
+
+    </div>
+    <hr>
+
+
+    <div class="row">
+      <section id="instruction">
+
+        <div class="container">
+
+          <div class="row">
+            <div class="col-sm-6">
+              <h1>最新通知</h1>
+              <h6>Recent Notices</h6>
+              <p class="lead">
+                <% @notice.each do |notice| %>
+                <div>
+              <span class="glyphicon glyphicon-hand-right">
+                <%= link_to notice.name, notice_url(notice) %>
+              </span>
+                  <span class="glyphicon glyphicon-calendar" style="float: right">
+                  <%= notice.created_at.strftime('%Y-%m-%d %H:%M') %>
+                </span>
+                </div>
+                <br>
+              <% end %>
+              </p>
+            </div>
+            <div class="col-sm-1"></div>
+
+
+          </div>
+        </div>
+      </section>
+
+
+
+    </div>
+  </div>
+
+</div>
